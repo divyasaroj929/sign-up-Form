@@ -1,7 +1,6 @@
 {
   "name": "signup",
   "version": "0.1.0",
-  "homepage": "git@github.com:divyasaroj929/signup.git",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
