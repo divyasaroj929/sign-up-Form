@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/divyasaroj929/sign-up-Form.git/static/css/main.f5f400f6.css",
-    "main.js": "/divyasaroj929/sign-up-Form.git/static/js/main.fabbf4e5.js",
+    "main.js": "/divyasaroj929/sign-up-Form.git/static/js/main.bc7e8284.js",
     "static/media/bubble.jpg": "/divyasaroj929/sign-up-Form.git/static/media/bubble.5e147a875b71cf3fd488.jpg",
     "static/media/university.jpg": "/divyasaroj929/sign-up-Form.git/static/media/university.d67ef6eeac30dc4e513f.jpg",
     "index.html": "/divyasaroj929/sign-up-Form.git/index.html",
     "main.f5f400f6.css.map": "/divyasaroj929/sign-up-Form.git/static/css/main.f5f400f6.css.map",
-    "main.fabbf4e5.js.map": "/divyasaroj929/sign-up-Form.git/static/js/main.fabbf4e5.js.map"
+    "main.bc7e8284.js.map": "/divyasaroj929/sign-up-Form.git/static/js/main.bc7e8284.js.map"
   },
   "entrypoints": [
     "static/css/main.f5f400f6.css",
-    "static/js/main.fabbf4e5.js"
+    "static/js/main.bc7e8284.js"
   ]
 }
