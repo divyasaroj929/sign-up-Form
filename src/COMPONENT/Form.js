@@ -118,7 +118,6 @@ const Form = () => {
                     style={{
                       fontSize: "10px",
                       color: "red",
-                      // marginTop: "30px",
                     }}
                   ></span>
                 </div>
@@ -159,7 +158,7 @@ const Form = () => {
                 <input
                   type="text"
                   placeholder="Enter your Email"
-                  // autoComplete="off"
+                  autoComplete="off"
                   // required
                   id="mail"
                 />
