@@ -7,7 +7,7 @@ function App() {
   console.log("99");
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/login-page" element={<Login />}></Route>
