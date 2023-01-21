@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Submitpage from "./Submitpage";
 import bubble from "../COMPONENT/bubble.jpg";
 import Login from "./Login";
 const Form = () => {
@@ -29,23 +28,6 @@ const Form = () => {
     /^([0-9]{4}[0-9]{4}[0-9]{4}$)|([0-9]{4}\s[0-9]{4}\s[0-9]{4}$)|([0-9]{4}-[0-9]{4}-[0-9]{4}$)/;
 
   console.log("19");
-  // const hendlemail = (e) => {
-  //   console.log("sdfghj");
-  //   let email = e.target.value;
-  //   if (!email.match(emilregex)) {
-  //     setErremail(true);
-  //   } else {
-  //     setErremail(false);
-  //   }
-  // };
-  // const hendleadhar = (e) => {
-  //   let adhar = e.target.value;
-  //   if (!adhar.match(adharregex)) {
-  //     setErradhar(true);
-  //   } else {
-  //     setErradhar(false);
-  //   }
-  // };
 
   const submitButton = (event) => {
     event.preventDefault();
