@@ -5,30 +5,75 @@ import Submitpage from "./Submitpage";
 import university from "./university.jpg";
 
 const Login = () => {
-  const [pass, setPass] = useState(false);
+  const [email, setEmail] = useState();
+  const [erremail, setErremail] = useState(false);
+
+  const [pass, setPass] = useState();
+  const [errorpassword, setErrorpassword] = useState(false);
+
+  const [checkpass, setCheckPass] = useState(false);
   const [ok, setOk] = useState(false);
   const emilregex =
     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
   const handleShow = () => {
-    setPass(!pass);
+    setCheckPass(!checkpass);
   };
 
-  const buttonSign = (event) => {
-    event.preventDefault();
-
-    const Email = document.getElementById("mail").value;
-    const pass = document.getElementById("password").value;
-
-    if (!Email.match(emilregex)) {
-      document.getElementById("span-1").innerHTML = "invalid email";
-    } else if (pass.length < 6) {
-      document.getElementById("span-2").innerHTML =
-        "Password must be at least 6 chars long";
+  const hendlemail = (e) => {
+    console.log("sdfghj");
+    let email = e.target.value;
+    if (!email.match(emilregex)) {
+      setErremail(true);
     } else {
-      document.getElementById("mail").value = "";
+      setErremail(false);
+    }
+    setEmail(email);
+  };
+
+  const hendlepassword = (e) => {
+    let pass = e.target.value;
+    if (pass.length < 8) {
+      setErrorpassword(true);
+    } else {
+      setErrorpassword(false);
+    }
+    setPass(pass);
+  };
+
+  const buttonSign = (e) => {
+    e.preventDefault();
+
+    // const Email = document.getElementById("mail").value;
+    // const pass = document.getElementById("password").value;
+
+    // if (!Email.match(emilregex)) {
+    //   document.getElementById("span-1").innerHTML = "invalid email";
+    // } else if (pass.length < 6) {
+    //   document.getElementById("span-2").innerHTML =
+    //     "Password must be at least 6 chars long";
+    // } else {
+    //   document.getElementById("mail").value = "";
+    //   setOk(true);
+    //   console.log(Email);
+    // }
+    let email = e.target[0].value;
+    if (!email.match(emilregex)) {
+      setErremail(true);
+    } else {
+      setErremail(false);
+    }
+
+    let pass = e.target[1].value;
+    if (pass.length < 8) {
+      setErrorpassword(true);
+    } else {
+      setErrorpassword(false);
+    }
+
+    if (email.match(emilregex) && !pass.length < 8) {
+      alert("successfully login");
       setOk(true);
-      console.log(Email);
     }
   };
   console.log("hgu");
@@ -48,12 +93,20 @@ const Login = () => {
                   // required
                   id="mail"
                   className="email-input"
+                  onChange={hendlemail}
+                  value={email}
                 />
-                <span
-                  style={{ fontSize: "9px", color: "red" }}
-                  className="span-1"
-                  id="span-1"
-                ></span>
+                {erremail ? (
+                  <span
+                    style={{ fontSize: "9px", color: "red" }}
+                    className="span-1"
+                    id="span-1"
+                  >
+                    enter your vaild email
+                  </span>
+                ) : (
+                  ""
+                )}
               </div>
               <div className="password">
                 <label className=" label-password">Enter your password</label>
@@ -61,16 +114,25 @@ const Login = () => {
                 <input
                   placeholder="******"
                   className="input-password"
-                  type={pass ? "text" : "password"}
+                  type={checkpass ? "text" : "password"}
                   id="password"
+                  onChange={hendlepassword}
+                  value={pass}
                 />
                 <CiUnread className="hide-label" onClick={handleShow} />
-                <span
-                  style={{ fontSize: "9px", color: "red" }}
-                  className="span-2"
-                  id="span-2"
-                ></span>
+                {errorpassword ? (
+                  <span
+                    style={{ fontSize: "9px", color: "red" }}
+                    className="span-2"
+                    id="span-2"
+                  >
+                    password must be 8 digit
+                  </span>
+                ) : (
+                  ""
+                )}
               </div>
+
               <div className=" remember">
                 <div className="input-remember">
                   <input type="checkbox" />

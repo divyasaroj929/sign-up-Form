@@ -1,81 +1,98 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Submitpage from "./Submitpage";
 import bubble from "../COMPONENT/bubble.jpg";
 import Login from "./Login";
+import university from "./university.jpg";
 const Form = () => {
-  const [image, setImage] = useState(false);
   const navigate = useNavigate();
+
+  const [image, setImage] = useState(false);
+
+  const [name, setName] = useState("");
+  const [errorName, setErrorName] = useState(false);
+
+  const [aadhar, setAadhar] = useState();
+  const [erraadhar, setErrAadhar] = useState(false);
+
+  const [email, setEmail] = useState();
+  const [erremail, setErremail] = useState(false);
 
   const turnLogin = () => {
     navigate("/Login-page");
   };
 
-  // setTimeout(() => {
-  //   console.log("good ");
-  //   turnLogin();
-  // }, 5000);
-
-  // clearTimeout(() => {
-  //   setTimeout(() => {
-  //     console.log("good ");
-  //     // turnLogin();
-  //   }, 5000);
-  // });
   const emilregex =
     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
   const adharregex =
     /^([0-9]{4}[0-9]{4}[0-9]{4}$)|([0-9]{4}\s[0-9]{4}\s[0-9]{4}$)|([0-9]{4}-[0-9]{4}-[0-9]{4}$)/;
 
-  console.log("19");
-
-  const submitButton = (event) => {
-    event.preventDefault();
-
-    console.log("com");
-    let firstname = document.getElementById("fname").value;
-
-    let lastname = document.getElementById("lname").value;
-
-    let Email = document.getElementById("mail").value;
-
-    let adharCard = document.getElementById("adhar").value;
-
-    if (firstname === "" || firstname === null) {
-      console.log("name");
-      document.getElementById("warning-1").innerHTML = "Enter your first name";
-      return false;
-    }
-    console.log(firstname);
-
-    if (lastname === "" || lastname === null) {
-      console.log("lname");
-      document.getElementById("warning-2 ").innerHTML = "Enter your last name";
-      return false;
-    }
-    console.log(lastname);
-
-    if (!adharCard.match(adharregex) || adharCard.length < 12) {
-      document.getElementById("warning-3").innerHTML =
-        " The aadhaar number must be 12 characters";
-      return false;
-    }
-    console.log(adharCard);
-
-    if (!Email.match(emilregex) || Email === null) {
-      console.log("hi");
-      document.getElementById("warning-4").innerHTML = "invalid email";
-      return false;
+  const hendlename = (e) => {
+    let name = e.target.value;
+    console.log("name", name.length);
+    if (name.length < 3) {
+      setErrorName(true);
     } else {
-      document.getElementById("fname").value = "";
-      document.getElementById("lname").value = "";
-      document.getElementById("mail").value = "";
-      document.getElementById("adhar").value = "";
-
-      setImage(true);
-      console.log("good");
+      setErrorName(false);
     }
-    console.log("hijk");
+    setName(name);
+  };
+
+  const hendlemail = (e) => {
+    console.log("sdfghj");
+    let email = e.target.value;
+    if (!email.match(emilregex)) {
+      setErremail(true);
+    } else {
+      setErremail(false);
+    }
+    setEmail(email);
+  };
+
+  const hendleadhar = (e) => {
+    let aadhar = e.target.value;
+    if (!aadhar.match(adharregex)) {
+      setErrAadhar(true);
+    } else {
+      setErrAadhar(false);
+    }
+    setAadhar(aadhar);
+  };
+
+  const submitButton = (e) => {
+    e.preventDefault();
+    console.log(e.target);
+
+    let name = e.target[0].value;
+    if (name.length < 3) {
+      setErrorName(true);
+    } else {
+      setErrorName(false);
+    }
+
+    let aadhar = e.target[2].value;
+    if (!aadhar.match(adharregex)) {
+      setErrAadhar(true);
+    } else {
+      setErrAadhar(false);
+    }
+
+    let email = e.target[3].value;
+    if (!email.match(emilregex)) {
+      setErremail(true);
+    } else {
+      setErremail(false);
+    }
+
+    if (
+      !name.lenght < 3 &&
+      email.match(emilregex) &&
+      aadhar.match(adharregex)
+    ) {
+      alert("from has been submited");
+      setImage(true);
+    }
   };
   if (image === false)
     return (
@@ -91,17 +108,23 @@ const Form = () => {
                     type="text"
                     placeholder="First Name"
                     autoComplete="off"
-                    // required
                     id="fname"
+                    onChange={hendlename}
+                    value={name}
                   />
-
-                  <span
-                    id="warning-1"
-                    style={{
-                      fontSize: "10px",
-                      color: "red",
-                    }}
-                  ></span>
+                  {errorName ? (
+                    <span
+                      id="warning-1"
+                      style={{
+                        fontSize: "10px",
+                        color: "red",
+                      }}
+                    >
+                      First Name lenght greater than 2 character
+                    </span>
+                  ) : (
+                    ""
+                  )}
                 </div>
 
                 <div className="div-3">
@@ -110,7 +133,6 @@ const Form = () => {
                     type="text"
                     placeholder="Last Name"
                     autoComplete="off"
-                    // required
                     id="lname"
                   />
                   <span
@@ -126,13 +148,20 @@ const Form = () => {
                   type="text"
                   placeholder="78XX 45XX 97XX"
                   autoComplete="off"
-                  // required
                   id="adhar"
+                  onChange={hendleadhar}
+                  value={aadhar}
                 />
-                <span
-                  id="warning-3"
-                  style={{ fontSize: "9px", color: "red" }}
-                ></span>
+                {erraadhar ? (
+                  <span
+                    id="warning-3"
+                    style={{ fontSize: "9px", color: "red" }}
+                  >
+                    The aadhaar number must be 12 digit
+                  </span>
+                ) : (
+                  ""
+                )}
               </div>
 
               <div className="div-3">
@@ -140,15 +169,22 @@ const Form = () => {
                 <input
                   type="text"
                   placeholder="Enter your Email"
-                  autoComplete="off"
+                  // autoComplete="off"
                   // required
                   id="mail"
+                  onChange={hendlemail}
+                  value={email}
                 />
-
-                <span
-                  id="warning-4"
-                  style={{ fontSize: "9px", color: "red" }}
-                ></span>
+                {erremail ? (
+                  <span
+                    id="warning-4"
+                    style={{ fontSize: "9px", color: "red" }}
+                  >
+                    Enter your valid email
+                  </span>
+                ) : (
+                  ""
+                )}
               </div>
 
               <div className="btn">
@@ -167,11 +203,12 @@ const Form = () => {
             </div>
           </form>
           <div className="bubble">
-            <img src={bubble} alt="img" className="logo" />
+            <img src={university} alt="img" className="logo" />
           </div>
         </div>
       </>
     );
+
   console.log("complete");
   return <Login />;
 };

@@ -18,8 +18,9 @@
   padding: 30px;
   width: 50%;
   gap: 0px 20px;
+  /* border-bottom: 1px solid gray; */
   height: 50%;
-  background-color: whitesmoke;
+  /* background-color: whitesmoke; */
   box-shadow: 0px 0px 5px 0px rgb(209, 207, 207);
 }
 .university {
@@ -60,11 +61,10 @@
   padding-bottom: 5px;
 }
 .email-input {
-  padding: 10px 0px 10px 20px;
-  cursor: pointer;
-  outline: none;
+  padding: 10px 0px 10px 5px;
   color: rgb(187, 180, 180);
   border: none;
+  border-bottom: 1px solid gray;
 }
 input:focus {
   border: none;
@@ -86,17 +86,16 @@ input:focus {
 .input-password {
   height: auto;
   width: 100%;
-  padding: 10px 0px 10px 20px;
+  padding: 10px 0px 10px 10px;
   border: 2px solid rgb(223, 214, 214);
-  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  outline: none;
   color: rgb(34, 31, 31);
   position: relative;
+  outline: none;
   border: none;
+  border-bottom: 1px solid gray;
 }
 .hide-label {
   position: absolute;
