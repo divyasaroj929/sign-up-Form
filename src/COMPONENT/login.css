@@ -135,13 +135,15 @@ input:focus {
 }
 
 .btn {
+  width: 100%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 .submit {
+  cursor: pointer;
   height: 30px;
-  width: 50px;
+  width: 100%;
   color: rgb(253, 249, 249);
   background-color: rgb(37, 130, 133);
   margin-top: 20px;

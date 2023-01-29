@@ -44,19 +44,6 @@ const Login = () => {
   const buttonSign = (e) => {
     e.preventDefault();
 
-    // const Email = document.getElementById("mail").value;
-    // const pass = document.getElementById("password").value;
-
-    // if (!Email.match(emilregex)) {
-    //   document.getElementById("span-1").innerHTML = "invalid email";
-    // } else if (pass.length < 6) {
-    //   document.getElementById("span-2").innerHTML =
-    //     "Password must be at least 6 chars long";
-    // } else {
-    //   document.getElementById("mail").value = "";
-    //   setOk(true);
-    //   console.log(Email);
-    // }
     let email = e.target[0].value;
     if (!email.match(emilregex)) {
       setErremail(true);
@@ -89,8 +76,7 @@ const Login = () => {
                 <input
                   type="text"
                   placeholder="Enter your Email"
-                  // autoComplete="off"
-                  // required
+                  autoComplete="off"
                   id="mail"
                   className="email-input"
                   onChange={hendlemail}
@@ -102,7 +88,7 @@ const Login = () => {
                     className="span-1"
                     id="span-1"
                   >
-                    enter your vaild email
+                    Enter your vaild email
                   </span>
                 ) : (
                   ""
@@ -139,7 +125,7 @@ const Login = () => {
                   <span>Remind Me</span>
                 </div>
                 <div className="forgot">
-                  <a href="#">forgot password ? </a>
+                  <a href="#">Forgot password ? </a>
                 </div>
               </div>
               <div className="btn">
