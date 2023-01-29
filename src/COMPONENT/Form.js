@@ -90,7 +90,7 @@ const Form = () => {
       email.match(emilregex) &&
       aadhar.match(adharregex)
     ) {
-      alert("from has been submited");
+      alert("Form has been submitted");
       setImage(true);
     }
   };
