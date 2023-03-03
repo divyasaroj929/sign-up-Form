@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/sign-up-Form/static/css/main.61ecfa28.css",
+    "main.css": "/sign-up-Form/static/css/main.c46b6645.css",
     "main.js": "/sign-up-Form/static/js/main.990c2c04.js",
     "static/media/bubble.jpg": "/sign-up-Form/static/media/bubble.5e147a875b71cf3fd488.jpg",
     "static/media/university.jpg": "/sign-up-Form/static/media/university.d67ef6eeac30dc4e513f.jpg",
     "index.html": "/sign-up-Form/index.html",
-    "main.61ecfa28.css.map": "/sign-up-Form/static/css/main.61ecfa28.css.map",
+    "main.c46b6645.css.map": "/sign-up-Form/static/css/main.c46b6645.css.map",
     "main.990c2c04.js.map": "/sign-up-Form/static/js/main.990c2c04.js.map"
   },
   "entrypoints": [
-    "static/css/main.61ecfa28.css",
+    "static/css/main.c46b6645.css",
     "static/js/main.990c2c04.js"
   ]
 }
