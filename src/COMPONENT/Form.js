@@ -12,6 +12,9 @@ const Form = () => {
   const [name, setName] = useState("");
   const [errorName, setErrorName] = useState(false);
 
+  const [lastname, setLastName] = useState("");
+  const [errorlastName, setErrorLastName] = useState(false);
+
   const [aadhar, setAadhar] = useState();
   const [erraadhar, setErrAadhar] = useState(false);
 
@@ -37,6 +40,19 @@ const Form = () => {
       setErrorName(false);
     }
     setName(name);
+  };
+
+  const hendleLastname = (e) => {
+    let lastname = e.target.value;
+    console.log("name");
+
+    console.log("name", name.length);
+    if (lastname == "") {
+      setErrorLastName(true);
+    } else {
+      setErrorLastName(false);
+    }
+    setLastName(name);
   };
 
   const hendlemail = (e) => {
@@ -65,11 +81,21 @@ const Form = () => {
     console.log(e.target);
 
     let name = e.target[0].value;
+
     if (name.length < 3) {
       setErrorName(true);
     } else {
       setErrorName(false);
     }
+
+    let lastname = e.target[1].value;
+
+    if (lastname == "") {
+      setErrorLastName(true);
+    } else {
+      setErrorLastName(false);
+    }
+    setLastName(name);
 
     let aadhar = e.target[2].value;
     if (!aadhar.match(adharregex)) {
@@ -87,6 +113,7 @@ const Form = () => {
 
     if (
       !name.lenght < 3 &&
+      !lastname == "" &&
       email.match(emilregex) &&
       aadhar.match(adharregex)
     ) {
@@ -115,10 +142,12 @@ const Form = () => {
                   {errorName ? (
                     <span
                       id="warning-1"
-                      style={{
-                        fontSize: "10px",
-                        color: "red",
-                      }}
+                      style={
+                        {
+                          // fontSize: "10px",
+                          // color: "red",
+                        }
+                      }
                     >
                       First Name lenght greater than 2 character
                     </span>
@@ -134,11 +163,24 @@ const Form = () => {
                     placeholder="Last Name"
                     autoComplete="off"
                     id="lname"
+                    onChange={hendleLastname}
+                    value={lastname}
                   />
-                  <span
-                    id="warning-2 "
-                    style={{ fontSize: "9px", color: "red" }}
-                  ></span>
+                  {errorlastName ? (
+                    <span
+                      id="warning-2"
+                      style={
+                        {
+                          // fontSize: "10px",
+                          // color: "red",
+                        }
+                      }
+                    >
+                      Last Name must be Fulfill
+                    </span>
+                  ) : (
+                    ""
+                  )}
                 </div>
               </div>
 
@@ -154,8 +196,8 @@ const Form = () => {
                 />
                 {erraadhar ? (
                   <span
-                    id="warning-3"
-                    style={{ fontSize: "9px", color: "red" }}
+                  // id="warning-3"
+                  // style={{ fontSize: "9px", color: "red" }}
                   >
                     The aadhaar number must be 12 digit
                   </span>
@@ -177,8 +219,8 @@ const Form = () => {
                 />
                 {erremail ? (
                   <span
-                    id="warning-4"
-                    style={{ fontSize: "9px", color: "red" }}
+                  // id="warning-4"
+                  // style={{ fontSize: "9px", color: "red" }}
                   >
                     Enter your valid email
                   </span>

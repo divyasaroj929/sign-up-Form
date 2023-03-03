@@ -3,9 +3,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 40px;
   padding-bottom: 40px;
-  height: 100%;
+  height: 100vh;
 }
 .login {
   width: 70%;
@@ -140,4 +139,174 @@ input:focus {
   background-color: rgb(37, 130, 133);
   margin-top: 20px;
   border: none;
+}
+.span-1 {
+  font-size: 8px;
+  color: crimson;
+}
+
+.span-2 {
+  font-size: 8px;
+  color: crimson;
+}
+
+@media (max-width: 1024px) {
+  .login-page {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .login-page .login {
+    width: 90%;
+    display: flex;
+    border: 1px solid rgb(201, 200, 200);
+    padding: 20px, 10px;
+  }
+  .login-form {
+    padding: 30px;
+    width: 100%;
+    gap: 0px 20px;
+    height: 100%;
+    box-shadow: 0px 0px 5px 0px rgb(209, 207, 207);
+  }
+  .university {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    height: auto;
+    box-shadow: 0px 0px 5px 0px rgb(209, 207, 207);
+  }
+  .email-input {
+    padding: 10px 0px 10px 5px;
+    color: rgb(187, 180, 180);
+    border: none;
+    font-size: 18px;
+    border-bottom: 1px solid gray;
+  }
+  .input-password {
+    height: auto;
+    width: 100%;
+    padding: 10px 0px 10px 10px;
+    border: 2px solid rgb(223, 214, 214);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(34, 31, 31);
+    position: relative;
+    outline: none;
+    font-size: 18px;
+
+    border: none;
+    border-bottom: 1px solid gray;
+  }
+  .input-remember span {
+    font-size: 16px;
+    color: black;
+  }
+  .forgot a {
+    text-decoration: none;
+    font-size: 16px;
+    color: rgb(40, 155, 142);
+  }
+  .login-box {
+    height: 50px;
+    font-size: 25px;
+    font-weight: 600;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    color: rgb(48, 47, 47);
+  }
+
+  .span-1 {
+    font-size: 18px;
+    color: crimson;
+  }
+
+  .span-2 {
+    font-size: 18px;
+    color: crimson;
+  }
+}
+@media (max-width: 480px) {
+  .login-page {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .login-page .login {
+    width: 80%;
+    display: inline;
+    margin: 10px;
+    height: 60vh;
+  }
+  .login-form {
+    padding: 30px;
+    width: 100%;
+    gap: 0px 20px;
+    height: 100%;
+    box-shadow: 0px 0px 5px 0px rgb(209, 207, 207);
+  }
+  .university {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    height: auto;
+    box-shadow: 0px 0px 5px 0px rgb(209, 207, 207);
+  }
+  .forgot a {
+    text-decoration: none;
+    font-size: 11px;
+    color: rgb(40, 155, 142);
+  }
+  .input-remember span {
+    font-size: 11px;
+    color: black;
+  }
+  .input-password {
+    height: auto;
+    font-size: 14px;
+
+    width: 100%;
+    padding: 10px 0px 10px 10px;
+    border: 2px solid rgb(223, 214, 214);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(34, 31, 31);
+    position: relative;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid gray;
+  }
+  .email-input {
+    padding: 10px 0px 10px 5px;
+    color: rgb(187, 180, 180);
+    font-size: 14px;
+
+    border: none;
+    border-bottom: 1px solid gray;
+  }
+  .span-1 {
+    font-size: 8px;
+    color: crimson;
+  }
+
+  .span-2 {
+    font-size: 8px;
+    color: crimson;
+  }
 }
