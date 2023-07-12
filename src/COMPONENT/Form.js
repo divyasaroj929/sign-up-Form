@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Submitpage from "./Submitpage";
-import bubble from "../COMPONENT/bubble.jpg";
 import Login from "./Login";
 import university from "./university.jpg";
 const Form = () => {
