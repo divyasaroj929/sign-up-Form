@@ -1,8 +1,9 @@
 import React from "react";
+
 const Submitpage = () => {
   return (
     <>
-      <p>submit form </p>
+      <div>Submitpage</div>;
     </>
   );
 };

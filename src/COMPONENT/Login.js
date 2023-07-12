@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./login.css";
 import { CiUnread } from "react-icons/ci";
-import Submitpage from "./Submitpage";
+import Submitpage from "./SubmitPage";
 import university from "./university.jpg";
 
 const Login = () => {
